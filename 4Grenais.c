@@ -10,20 +10,25 @@ int main() {
     int vitoria_inter = 0;
 
     do {
-        scanf("%d %d", &inter, &gremio);
+        int gol_inter, gol_gremio;
+        scanf("%d %d", &gol_inter, &gol_gremio);
+
+        inter += gol_inter;
+        gremio += gol_gremio;
+
         printf("Novo grenal (1-sim 2-nao)\n");
         scanf("%d", &opcao);
         grenais++;
 
-        if (inter == gremio) {
+        if (gol_inter == gol_gremio) {
             empates++;
-        } else if (inter > gremio) {
+        } else if (gol_inter > gol_gremio) {
             vitoria_inter++;
         } else {
             vitoria_gremio++;
         }
         
-    } while(opcao == 1);
+    } while (opcao == 1);
 
     printf("%d grenais\n", grenais);
     printf("Inter:%d\n", vitoria_inter);
